@@ -5,13 +5,21 @@
     - .
 
   vars:
+    partitions:
+    - name: /dev/sdb
+      volumes:
+        - number: 1
+    - name: /dev/sdc
+      volumes:
+        - number: 1
+
     software_raid_alerts_email: "email@example.com"
     software_raid_devices:
       - device: /dev/md0
         level: 0
         components:
-          - /dev/sdb
-          - /dev/sdc
+          - /dev/sdb1
+          - /dev/sdc1
         filesystem_type: "ext4"
         mount_point: "/mnt/volume"
         mount_options: "noatime,noexec,nodiratime"
